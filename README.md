@@ -66,15 +66,11 @@ Your task is to implement these features using **React Hooks (`useState`)** whil
 ---
 
 ## **Testing and Debugging**
-1. Clone the repository containing **pre-written tests**:
-   ```sh
-   git clone <testing-repository-url>
-   ```
-2. Run the test suite:
+1. Run the test suite:
    ```sh
    npm test
    ```
-3. Debug any failing tests:
+2. Debug any failing tests:
    - Use **browser developer tools** (`F12 → Console`).
    - Verify that product cards display correctly.
    - Ensure filtering and cart updates work as expected.
