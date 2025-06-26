@@ -33,7 +33,7 @@ test('displays message when no products match filter', () => {
   expect(screen.getByText(/no products available/i)).toBeInTheDocument()
 })
 
-test('adds and removes items from cart', () => {
+test('adds items to cart', () => {
   render(<App />)
 
   const appleBtn = screen.getByTestId('product-' + sampleProducts.find(i => i.name === 'Apple').id)
