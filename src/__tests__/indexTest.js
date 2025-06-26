@@ -1,28 +1,50 @@
-import { render, screen } from '@testing-library/react'
+import React from 'react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import App from '../App'
-import { toBeInTheDocument } from "@testing-library/jest-dom"
+import { sampleProducts } from '../components/ProductList'
+import '@testing-library/jest-dom'
 
-const sampleProducts = [
-  { id: 1, name: 'Apple', price: '$1.00', category: 'Fruits', inStock: true },
-  { id: 2, name: 'Milk', price: '$2.50', category: 'Dairy', inStock: false },
-  { id: 3, name: 'Bread', price: '$3.00', category: 'Bakery', inStock: true },
-]
+test('toggles dark mode on button click', () => {
+  render(<App />)
+  const toggleBtn = screen.getByRole('button', { name: /toggle/i })
+  expect(toggleBtn).toBeInTheDocument()
 
-test('renders shopping app', () => {
-    render(<App />)
-    expect(screen.getByText(/Shopping App/i)).toBeInTheDocument()
+  fireEvent.click(toggleBtn)
+  expect(toggleBtn.textContent.toLowerCase()).toMatch(/light/i)
+
+  fireEvent.click(toggleBtn)
+  expect(toggleBtn.textContent.toLowerCase()).toMatch(/dark/i)
 })
 
-test('displays all products initially', () => {
-    render(<App />)
-    sampleProducts.forEach((product) => {
-        expect(screen.getByText(product.name)).toBeInTheDocument()
-    })
+test('filters products by category', () => {
+  render(<App />)
+  const dropdown = screen.getByRole('combobox')
+
+  fireEvent.change(dropdown, { target: { value: 'Fruits' } })
+  expect(screen.getByText(/Apple/i)).toBeInTheDocument()
+  expect(screen.queryByText(/Milk/i)).not.toBeInTheDocument()
 })
 
-test('shows "No products available" when filtering removes all products', () => {
-    render(<App />)
-    const filterDropdown = screen.getByRole('combobox')
-    filterDropdown.value = 'Non-Existent Category'
-    expect(screen.getByText(/No products available/i)).toBeInTheDocument()
+test('displays message when no products match filter', () => {
+  render(<App />)
+  const dropdown = screen.getByRole('combobox')
+  fireEvent.change(dropdown, { target: { value: 'NonExistent' } })
+
+  expect(screen.getByText(/no products available/i)).toBeInTheDocument()
+})
+
+test('adds and removes items from cart', () => {
+  render(<App />)
+
+  const appleBtn = screen.getByTestId('product-' + sampleProducts.find(i => i.name === 'Apple').id)
+  fireEvent.click(appleBtn)
+
+  expect(screen.getByText(/shopping cart/i)).toBeInTheDocument()
+  expect(screen.getByText(/Apple is in your cart/i)).toBeInTheDocument()
+
+  const milkBtn = screen.getByTestId('product-' + sampleProducts.find(i => i.name === 'Milk').id)
+  fireEvent.click(milkBtn)
+
+  expect(screen.getByText(/shopping cart/i)).toBeInTheDocument()
+  expect(screen.getByText(/Milk is in your cart/i)).toBeInTheDocument()
 })
