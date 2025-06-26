@@ -1,6 +1,11 @@
 import { render, screen } from '@testing-library/react'
 import App from '../src/App'
-import { sampleProducts } from './helpers'
+
+const sampleProducts = [
+  { id: 1, name: 'Apple', price: '$1.00', category: 'Fruits', inStock: true },
+  { id: 2, name: 'Milk', price: '$2.50', category: 'Dairy', inStock: false },
+  { id: 3, name: 'Bread', price: '$3.00', category: 'Bakery', inStock: true },
+]
 
 test('renders shopping app', () => {
     render(<App />)
