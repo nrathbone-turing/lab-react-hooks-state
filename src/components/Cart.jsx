@@ -5,7 +5,7 @@ const Cart = () => {
     <div>
       <h2>Shopping Cart</h2>
       <ul>
-        {/* Include items here in li tags with text 'ITEM.NAME is in your cart.' */}
+        {/* TODO: Include items here in li tags with text 'ITEM.NAME is in your cart.' */}
       </ul>
     </div>
   )
