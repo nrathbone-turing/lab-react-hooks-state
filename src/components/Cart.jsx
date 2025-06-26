@@ -4,9 +4,9 @@ const Cart = () => {
   return (
     <div>
       <h2>Shopping Cart</h2>
-
-      {/* TODO: Display cart items dynamically */}
-      <p>The cart feature will be implemented here.</p>
+      <ul>
+        {/* TODO: Include items here in li tags with text 'ITEM.NAME is in your cart.' */}
+      </ul>
     </div>
   )
 }

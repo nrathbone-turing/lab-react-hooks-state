@@ -2,9 +2,9 @@ import React from 'react'
 import ProductCard from './ProductCard'
 
 // Sample product data (for display purposes only)
-const sampleProducts = [
-  { id: 1, name: 'Apple', price: '$1.00', inStock: true },
-  { id: 2, name: 'Milk', price: '$2.50', inStock: false },
+export const sampleProducts = [
+  { id: 1, name: 'Apple', price: '$1.00', category: 'Fruits', inStock: true },
+  { id: 2, name: 'Milk', price: '$2.50', category: 'Dairy', inStock: false }
 ]
 
 const ProductList = () => {
@@ -12,7 +12,7 @@ const ProductList = () => {
     <div>
       <h2>Available Products</h2>
 
-      {/* TODO: Replace sample data with dynamic product list */}
+      {/* TODO: Filter sample data using selected category */}
       {sampleProducts.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}

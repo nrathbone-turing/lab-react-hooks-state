@@ -28,7 +28,6 @@ const App = () => {
         <option value="Dairy">Dairy</option>
       </select>
 
-      {/* Display initial sample products */}
       <ProductList />
 
       {/* TODO: Implement and render Cart component */}

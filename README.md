@@ -5,7 +5,7 @@
 Your company is developing a **new grocery shopping app** to improve the shopping experience for customers. You have been assigned to implement **three key features**:
 
 1. **Dark Mode Toggle** – Users can switch between light and dark mode.
-2. **Add to Cart** – Users can add or remove items from the shopping cart.
+2. **Add to Cart** – Users can add items to the shopping cart.
 3. **Category Filtering** – Users can filter products by category.
 
 Your task is to implement these features using **React Hooks (`useState`)** while ensuring the app is functional and visually consistent.
@@ -14,7 +14,7 @@ Your task is to implement these features using **React Hooks (`useState`)** whil
 
 ## **Challenge**
 1. Implement a **dark mode toggle**.
-2. Allow users to **add/remove items** from a shopping cart.
+2. Allow users to **add items** from a shopping cart.
 3. Implement **category-based filtering** for the shopping list.
 
 ## **Bonus Challenge**
@@ -43,14 +43,14 @@ Your task is to implement these features using **React Hooks (`useState`)** whil
 
 ### **2️⃣ Implement the Dark Mode Toggle**
 - Implement a **button** that toggles between light and dark mode.
-- The **background and text color** should change dynamically.
+- The text of the toggle button should change dynamically.
+   - Feel free to also play with styling! However, you'll only be tested on the text of the dark mode toggle button.
 - Use the **useState hook** to manage the current theme.
 
 ### **3️⃣ Implement the Add to Cart Feature**
 - Each product should have an **"Add to Cart"** button.
 - Clicking the button should add the item to the cart.
-- If the item is already in the cart, clicking the button should **remove** it.
-- The cart should display a **list of added items**.
+- The cart should display a **list of added items** with the text 'Item is in your cart' such as 'Milk is in your cart.'
 
 ### **4️⃣ Implement the Category Filter**
 - Create a **dropdown menu** to filter products by category.
@@ -61,20 +61,16 @@ Your task is to implement these features using **React Hooks (`useState`)** whil
 
 ## **Bonus Challenge: Cart Total**
 - Display a **cart total** showing how many items have been added.
-- The total should update dynamically when items are added or removed.
+- The total should update dynamically when items are added.
 
 ---
 
 ## **Testing and Debugging**
-1. Clone the repository containing **pre-written tests**:
-   ```sh
-   git clone <testing-repository-url>
-   ```
-2. Run the test suite:
+1. Run the test suite:
    ```sh
    npm test
    ```
-3. Debug any failing tests:
+2. Debug any failing tests:
    - Use **browser developer tools** (`F12 → Console`).
    - Verify that product cards display correctly.
    - Ensure filtering and cart updates work as expected.
@@ -93,29 +89,13 @@ Your task is to implement these features using **React Hooks (`useState`)** whil
    ```
 3. Push to GitHub:
    ```sh
-   git remote add origin <your-repository-url>
    git push origin main
    ```
 
 ---
 
-## **Submission and Grading Criteria**
-
-### **✅ Submission Format**
-- Submit your project as a **GitHub repository link**.
-- Include a **README.md** with setup instructions.
-- Provide a **screenshot** of the working app.
-- Ensure **all tests pass** before submission.
-
-### **✅ Rubric**
-
-| **Criteria**          | **AutoTest Passed**                          | **AutoTest Did Not Pass** |
-|----------------------|--------------------------------|--------------------------|
-| **Functionality (30 pts)** | Features work correctly, including filtering, cart updates, and dark mode. | Features are missing or do not function correctly. |
-| **Project Structure (10 pts)** | Well-organized file structure, follows React best practices. | Poorly structured files, inconsistent naming. |
-| **Testing (10 pts)** | Pre-written Jest tests validate dynamic behavior. | Tests do not run or fail. |
-| **Documentation (5 pts)** | Clear README and well-commented code. | README missing or unclear. |
-| **npm and Dependencies (5 pts)** | Required packages installed and correctly used. | Dependencies missing or unused. |
+### **✅ Submission**
+- Submit your project as a **GitHub repository** to CodeGrade.
 
 ---
 
@@ -125,7 +105,3 @@ Your task is to implement these features using **React Hooks (`useState`)** whil
 - [CSS Modules Documentation](https://github.com/css-modules/css-modules)
 - [Jest Testing Framework](https://jestjs.io/)
 - [React Testing Library](https://testing-library.com)
-- [document.createElement()](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
-- [append()](https://developer.mozilla.org/en-US/docs/Web/API/Element/append)
-- [removeChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
-- [element.remove()](https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove)
