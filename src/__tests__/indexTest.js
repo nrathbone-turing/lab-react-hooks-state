@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import App from '../src/App'
+import App from '../App'
+import { toBeInTheDocument } from "@testing-library/jest-dom"
 
 const sampleProducts = [
   { id: 1, name: 'Apple', price: '$1.00', category: 'Fruits', inStock: true },
