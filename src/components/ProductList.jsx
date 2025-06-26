@@ -12,7 +12,7 @@ const ProductList = () => {
     <div>
       <h2>Available Products</h2>
 
-      {/* TODO: Replace sample data with dynamic product list */}
+      {/* TODO: Filter sample data using selected category */}
       {sampleProducts.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
