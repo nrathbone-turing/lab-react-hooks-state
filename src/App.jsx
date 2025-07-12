@@ -41,7 +41,12 @@ const App = () => {
       
       {/* Implement category filter dropdown */}
       <label>Filter by Category: </label>
-      <select onChange={(e) => setSelectedCategory(e.target.value)}></select>
+      <select onChange={(e) => setSelectedCategory(e.target.value)}>
+        <option value="all">All</option>
+        <option value="Fruits">Fruits</option>
+        <option value="Dairy">Dairy</option>
+      </select>
+      
       <ProductList category={selectedCategory} onAddToCart={handleAddToCart} />
 
       {/* Implement and render Cart component */}

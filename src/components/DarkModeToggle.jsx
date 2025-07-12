@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DarkModeToggle = () => {
+const DarkModeToggle = ({ darkMode,setDarkMode}) => {
   // Implement dark mode toggle logic
   const toggleMode = () => setDarkMode(prev => !prev);
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../styles/ProductCard.module.css'
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, onAddToCart }) => {
   return (
     <div
       className={`${styles.card} ${!product.inStock ? styles.outOfStock : ''}`}
