@@ -1,6 +1,15 @@
 import React from 'react'
 
 const Cart = ({ cartItems,onRemoveFromCart }) => {
+  // Bonus challenge for Cart total
+  const totalItems = cartItems.length;
+
+  // Parse and sum the numeric prices of items
+  const totalCost = cartItems.reduce((sum, item) => {
+    const numericPrice = parseFloat(item.price.replace('$', ''));
+    return sum + numericPrice;
+  }, 0).toFixed(2);
+
   return (
     <div>
       <h2>Shopping Cart</h2>
@@ -9,12 +18,17 @@ const Cart = ({ cartItems,onRemoveFromCart }) => {
         {cartItems.map(item => (
           <li key={item.id}>
             {item.name} is in your cart.
-            <button onClick={() => onRemoveFromCart(item.id)}>Remove</button>
+            <button onClick={() => onRemoveFromCart(item.id)}
+              style={{ marginLeft: '0.5rem' }}>
+              Remove
+            </button>
           </li>
         ))}
       </ul>
-    {/* Bonus challenge for cart total */}
-    <p>Total items: {cartItems.length}</p>
+      <div style={{ marginTop: '1rem' }}>
+        <p>Total items: {totalItems}</p>
+        <p>Total cost: ${totalCost}</p>
+      </div>
     </div>
   )
 }

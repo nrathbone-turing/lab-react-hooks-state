@@ -44,17 +44,20 @@ const App = () => {
         Welcome! Your task is to implement filtering, cart management, and dark
         mode.
       </p>
-
-      {/* Render DarkModeToggle and implement dark mode functionality */}
-      <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
       
       {/* Implement category filter dropdown */}
-      <label>Filter by Category: </label>
-      <select onChange={(e) => setSelectedCategory(e.target.value)}>
-        <option value="all">All</option>
-        <option value="Fruits">Fruits</option>
-        <option value="Dairy">Dairy</option>
-      </select>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+        {/* Render DarkModeToggle and implement dark mode functionality */}
+        <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+        
+        <label>Filter by Category: </label>
+        <select onChange={(e) => setSelectedCategory(e.target.value)}>
+          <option value="all">All</option>
+          <option value="Fruits">Fruits</option>
+          <option value="Dairy">Dairy</option>
+        </select>
+      </div>
+
       
       <ProductList category={selectedCategory} onAddToCart={handleAddToCart} />
 
