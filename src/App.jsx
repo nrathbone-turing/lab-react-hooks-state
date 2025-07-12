@@ -3,7 +3,6 @@ import ProductList from './components/ProductList'
 import DarkModeToggle from './components/DarkModeToggle'
 import Cart from './components/Cart'
 import darkModeStyles from './styles/DarkMode.module.css';
-import productCardStyles from './styles/ProductCard.module.css';
 
 const App = () => {
   // Implement state for dark mode toggle
