@@ -7,7 +7,13 @@ const App = () => {
   // Implement state for dark mode toggle
   const [darkMode, setDarkMode] = useState(false);
 
-  // TODO: Implement state for cart management
+  // Implement state for cart management
+  const [cartItems, setCartItems] = useState([]);
+
+  // Implement event handler for handleAddToCart
+  const handleAddToCart = (product) => {
+  setCartItems(prev => [...prev, product]);
+};
 
   // TODO: Implement state for category filtering
 
