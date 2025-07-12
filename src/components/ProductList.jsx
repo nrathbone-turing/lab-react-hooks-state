@@ -15,13 +15,9 @@ const ProductList = ({ category,onAddToCart}) => {
     return (
     <div>
       <h2>Available Products</h2>
-        {/* Filter function to pass selected category to product list then filter inside it */}
+        {/* Filter sample data using selected category */}
         {filteredProducts.map(product => (
           <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
-        ))}
-        {/* Filter sample data using selected category */}
-        {sampleProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
         ))}
     </div>
   )
