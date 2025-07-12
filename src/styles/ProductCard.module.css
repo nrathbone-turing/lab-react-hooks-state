@@ -1,13 +1,20 @@
 /* Style the product card container */
 .card {
-      color: inherit;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 1rem;
-    margin: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    transition: background-color 0.3s ease;
+  color: inherit;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode variant of card */
+.dark-mode .card {
+  background-color: #1e1e1e;
+  color: white;
+  border-color: #444;
 }
 
 /* Add special styling for out-of-stock products */
