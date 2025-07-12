@@ -29,7 +29,7 @@ const App = () => {
   };
   
   return (
-    <div>
+     <div className={darkMode ? 'dark-mode' : ''}>
       <h1>🛒 Shopping App</h1>
       <p>
         Welcome! Your task is to implement filtering, cart management, and dark
