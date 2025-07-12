@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Cart = ({ cartItems }) => {
+const Cart = ({ cartItems,onRemoveFromCart }) => {
   return (
     <div>
       <h2>Shopping Cart</h2>
