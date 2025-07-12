@@ -19,6 +19,10 @@ const App = () => {
   const handleAddToCart = (product) => {
     setCartItems(prev => [...prev, product]);
   }
+  // Implement event handler for removeFromCart 
+  const handleRemoveFromCart = (idToRemove) => {
+    setCartItems(prev => prev.filter(item => item.id !== idToRemove));
+  };
 
   // Implement state for category based filtering
   const [selectedCategory, setSelectedCategory] = useState("all");
