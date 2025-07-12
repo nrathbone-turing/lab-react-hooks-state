@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Cart = () => {
+const Cart = ({ cartItems }) => {
   return (
     <div>
       <h2>Shopping Cart</h2>
@@ -10,6 +10,8 @@ const Cart = () => {
         <li key={item.id}>{item.name} is in your cart.</li>
       ))}
     </ul>
+    {/* Bonus challenge for cart total */}
+    <p>Total items: {cartItems.length}</p>
     </div>
   )
 }
